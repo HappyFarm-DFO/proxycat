@@ -3,6 +3,6 @@
 Ethereum aggregator
 Onchain API
 
-see 🚜HappyFarm
+🚜HappyFarm
 https://github.com/HappyFarm-DFO/
 
