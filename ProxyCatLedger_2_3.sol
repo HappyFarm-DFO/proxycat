@@ -6,8 +6,6 @@
 
 pragma solidity ^0.6.0;
 
-
-
 contract ProxycatLedger{ 
     
     uint256 public cats=0;
@@ -51,26 +49,6 @@ contract ProxycatLedger{
             kittylist[kittiesByFamily[family][label].index]=Kitty(kitty,label,family,abi,kittiesByFamily[family][label].index);
             kittiesByFamily[family][label]=Kitty(kitty,label,family,abi,kittiesByFamily[family][label].index);
         return true;
-    }
-    
-      function setCall(address kitty,string memory family,string memory label,string memory abi) public returns(uint256){
-        if((msg.sender!=master)||(kittyindex[kitty]>0))revert();
-        
-        if(kittyfamily[family].length==0){gensList.push(family);}
-        
-        if(kittiesByFamily[family][label].kitty==address(0x0)){
-            cats++;
-            kittiesByFamily[family][label]=Kitty(kitty,label,family,abi,cats);
-            kittylist[cats]=Kitty(kitty,label,family,abi,cats);
-            kittyindex[kitty]=cats;
-            kittyfamily[family].push(label);
-        }else{
-            kittyindex[kittiesByFamily[family][label].kitty]=0;
-            kittyindex[kitty]=kittiesByFamily[family][label].index;
-            kittylist[kittiesByFamily[family][label].index]=Kitty(kitty,label,family,abi,kittiesByFamily[family][label].index);
-            kittiesByFamily[family][label]=Kitty(kitty,label,family,abi,kittiesByFamily[family][label].index);
-        }
-        return cats;
     }
     
     
