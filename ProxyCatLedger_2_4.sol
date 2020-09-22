@@ -1,7 +1,7 @@
 /* 
  *  ProxyCat Ledger
  *  VERSION: 2.4
- *  kitty: 0xc4891Ef19Ee282D0e19901ff7Dcfb591043B19dF
+ *  
  */
  
 
@@ -87,6 +87,3 @@ contract ProxycatLedger{
     
     
 }
-
-
-
