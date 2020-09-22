@@ -26,7 +26,7 @@ contract ProxycatLedger{
     mapping(string => string[]) public kittyfamily;
     string[] public gensList;
     
-    string public version="1.1";
+    string public version="1.6";
    
     constructor()public {master=msg.sender;}
     
