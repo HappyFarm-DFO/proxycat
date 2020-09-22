@@ -33,14 +33,16 @@ contract ProxyKitty {
       function feed(string memory label,string memory label2,uint number,uint number2) public view returns (string memory) {}
       function feed(address target,string memory label2,uint number,uint number2) public view returns (string memory) {}
       
+      function feed(bytes32 data) public view returns (string memory) {}
+      
 }
 
-contract proxycat{ 
+contract ProxyCat{ 
     
     
-    string public version="1.10";
+    string public version="1.0";
     
-    address public ledger=0x2B9C770Ee37b9193faac8fBFc4b78635DdedB175;
+    address public ledger=0x767A10321C2c7EABC3D31b89504dCd04A5Da0086;
 
       
       function cat(string memory family,string memory label,address target) public view returns (string memory) {
@@ -122,5 +124,10 @@ contract proxycat{
           (address a,string memory b,uint c) = ProxyCatLedger(ledger).getKitty(family,label);
           return ProxyKitty(a).feed(target,text,number,number2);
       } 
+      
+      function cat(string memory family,string memory label,bytes32 data) public view returns (string memory) {
+          (address a,string memory b,uint c) = ProxyCatLedger(ledger).getKitty(family,label);
+          return ProxyKitty(a).feed(data);
+      }
 
 }
